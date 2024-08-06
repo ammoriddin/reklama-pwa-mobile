@@ -1,6 +1,6 @@
 import CustomButton from '@/system-components/button'
 import CustomInput from '@/system-components/input'
-import PhoneNumberInput from '@/system-components/phone-number-input'
+import PhoneNumberInput from '@/system-components/number-input'
 import Link from 'next/link'
 import React from 'react'
 
