@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/system-components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -16,6 +17,9 @@ module.exports = {
     colors: {
       primary: '#322C39',
       secondary: '#212121',
+      purple: '#7000ff',
+      lightPuprle: '#F8F2FF',
+      lightGray: "#f5f5f5",
     }
   },
   plugins: [],
