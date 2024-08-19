@@ -11,7 +11,7 @@ export default function Home() {
 
       <ReklamaSection />
 
-      <div className="fixed w-full bottom-0 left-0 py-[12px] bottom-navigation flex items-center justify-center gap-[50px] bg-[transparent]">
+      <div className="fixed w-full bottom-0 left-0 py-[12px] bg-[black] bottom-navigation flex items-center justify-center gap-[50px]">
         <Link href={"/"} className="flex items-center justify-center flex-col gap-[2px]">
           <Icons.home fill={"#fff"} width="24px" height="24px" />
           <p className={`text-[11px] font-[400] leading-[13px] text-[white]`}>Bosh Sahifa</p>
