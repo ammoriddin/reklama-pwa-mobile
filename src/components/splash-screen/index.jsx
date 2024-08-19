@@ -14,11 +14,15 @@ const SplashScreen = () => {
             setIsWelcome("hidden")
         }, [1500]);
     }, [isWelcome])
+
+    useEffect(() => {
+        window.localStorage.setItem("fristEntry", 'false')
+    }, [])
     
     useIsOnboardsShow()
 
     return (
-        <div className={`absolute bg-white h-full w-full ${isWelcome} top-0 left-0 transition-[opacity] duration-[1.5s] ${isWelcome ? "opacity-100" : "opacity-0"}`}>
+        <div className={`fixed bg-[white] z-[999] h-full w-full ${isWelcome} top-0 left-0 transition-[opacity] duration-[1.5s] ${isWelcome ? "opacity-100" : "opacity-0"}`}>
             <div className="absolute flex items-center gap-[4px] top-[45%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
                 <Icons.logo />
                 <h1 className="font-[800] text-[2rem] leading-[40.8px]">onest</h1>

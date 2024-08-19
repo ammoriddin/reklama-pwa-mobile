@@ -5,10 +5,12 @@ export const useIsOnboardsShow = () => {
     const router = useRouter();
 
     useEffect(() => {
-        if (window.localStorage.getItem("isOnboard")) {
+        if (window.localStorage.getItem("token")) {
             router.push("/");
-        } else {
+        } else if (!window.localStorage.getItem('firstEntry')) {
             router.push("/on-board");
+        } else {
+            router.push('/login')
         }
     }, [router]);
 }

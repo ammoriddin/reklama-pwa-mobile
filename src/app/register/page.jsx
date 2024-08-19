@@ -1,5 +1,6 @@
 "use client"
 
+import Categorie from '@/components/categories'
 import Gender from '@/components/gender'
 import StepShower from '@/components/register-steps/step-shower'
 import { Icons } from '@/icons'
@@ -10,11 +11,17 @@ import LocationInput from '@/system-components/location-input'
 import PhoneNumberInput from '@/system-components/phone-number'
 import VerificationCodePlace from '@/system-components/verification-code-place'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 const Register = () => {
   const [stepIn, setStepIn] = useState(1)
-  const [nextStep, setNextStep] = useState(true)
+  const router = useRouter()
+
+  const [phoneNumber, setPhoneNumber] = useState()
+  const [position, setPosition] = useState()
+  const [nestedPosition, setNestedPosition] = useState()
+  const [userLogin, setUserLogin] = useState(false)
 
   const [data, setData] = useState({
     userName: "",
@@ -30,14 +37,22 @@ const Register = () => {
     }));
   };
   
-  useEffect(() => {
-    const { userName, age, password } = data;
-    if (userName && age && password) {
-      setNextStep(false);
+  const handleClick = () => {
+    if (stepIn < 3) {
+      setStepIn(stepIn + 1);
     } else {
-      setNextStep(true);
+      router.push('/profile');
+      setUserLogin(true)
     }
-  }, [data]);
+  };
+
+  useEffect(() => {
+    if (userLogin) {
+      window.localStorage.setItem('token', "faketoken")
+    } else {
+      return
+    }
+  }, [userLogin])
   
 
   return (
@@ -83,7 +98,7 @@ const Register = () => {
         {
           stepIn == 2 &&
           <>
-           <PhoneNumberInput />
+           <PhoneNumberInput value={phoneNumber} setValue={setPhoneNumber} />
           
             {/* Enter SMS Code Section */}
             <p className='text-[black] text-[1rem] font-[500] mb-[12px]'>Enter a sms code</p>
@@ -99,15 +114,67 @@ const Register = () => {
             </div>
           </>
         }
+
+        {
+          stepIn == 3 &&
+          <>
+            <div className='flex flex-col gap-[40px] mb-[15px]'>
+              <CustomInput
+                name="position"
+                value={position}
+                onChange={setPosition}
+                placeholder={'Soha yo’nalishi'}
+                type={'text'}
+              />
+            
+              <CustomInput
+                name="nestedposition"
+                value={position}
+                onChange={setPosition}
+                placeholder={'Ichki yo’nalish'}
+                type={'text'}
+              />
+            </div>
+
+            <div className='flex items-center gap-[6px] mb-[60px]'>
+              <Checkbox />
+              <p className='text-primary font-[400] text-[14px]'>Vaqtincha ishsiz</p>
+            </div>
+
+            <div className='mb-[10px]'>
+              <CustomInput
+                name="nestedposition"
+                value={position}
+                onChange={setPosition}
+                placeholder={'Kategoriyani tanlash'}
+                type={'text'}
+              />
+            </div>
+
+            <div className='flex flex-wrap gap-[8px] w-full h-[15vh] overflow-auto'>
+              <Categorie categorie_name={'Ingiliz tili'} />
+              <Categorie categorie_name={'Ingiliz tili'} />
+              <Categorie categorie_name={'Ingiliz tili'} />
+              <Categorie categorie_name={'Ingiliz tili'} />
+              <Categorie categorie_name={'Ingiliz tili'} />
+              <Categorie categorie_name={'Ingiliz tili'} />
+              <Categorie categorie_name={'Ingiliz tili'} />
+              <Categorie categorie_name={'Ingiliz tili'} />
+            </div>
+          </>
+        }
       </div>
 
       <div>
-        <div className='flex items-center gap-[6px] mb-[13.5px]'>
-          <Checkbox />
-          <p className='text-primary font-[400] text-[14px]'>I agree to the <Link className='text-purple' href={'/privacy-policy'}>privacy policy</Link></p>
-        </div>
+        {
+          stepIn == 1 && 
+          <div className='flex items-center gap-[6px] mb-[13.5px]'>
+            <Checkbox />
+            <p className='text-primary font-[400] text-[14px]'>I agree to the <Link className='text-purple' href={'/privacy-policy'}>privacy policy</Link></p>
+          </div>
+        }
 
-        <CustomButton onClick={() => setStepIn(2)} disabled={nextStep} text={'Continue'} />
+        <CustomButton onClick={handleClick} text={(stepIn === 1 || stepIn === 2) ? 'Continue' : 'Finish'} />
       </div>
     </section>
   )
