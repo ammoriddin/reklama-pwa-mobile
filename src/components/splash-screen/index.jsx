@@ -12,7 +12,7 @@ const SplashScreen = () => {
         
         setTimeout(() => {
             setIsWelcome("hidden")
-        }, [1500]);
+        }, [500]);
     }, [isWelcome])
 
     useEffect(() => {

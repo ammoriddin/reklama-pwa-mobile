@@ -1,13 +1,12 @@
 import SplashScreen from "@/components/splash-screen";
+import BottomNavigation from "@/container/navigation";
 
 export default function Home() {
   return (
     <div className="relative z-[99]">
       <SplashScreen />
 
-      <p className="relative">
-        Home page
-      </p>
+      <BottomNavigation active={'home'} />
     </div>
   );
 }
