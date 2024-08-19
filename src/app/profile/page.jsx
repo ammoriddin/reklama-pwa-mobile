@@ -1,4 +1,5 @@
 import ManagersCard from '@/components/managers-card'
+import BottomNavigation from '@/container/navigation'
 import { Icons } from '@/icons'
 import React from 'react'
 
@@ -58,7 +59,7 @@ const Profile = () => {
             </div>
         </div>
 
-        <section className='px-[16px]'>
+        <section className='px-[16px] mb-[70px]'>
             {/* Search Section */}
             <div className='flex items-center gap-[8px] mb-[24px]'>
                 <Icons.searchIcon width='24px' height='24px' />
@@ -88,22 +89,7 @@ const Profile = () => {
         </section>
 
         {/* Bottom Navigation */}
-        <div className='fixed w-full bottom-0 left-0 py-[8px] bottom-navigation flex items-center justify-center gap-[50px] bg-[white]'>
-            <div className='flex items-center justify-center flex-col gap-[2px]'>
-                <Icons.home fill='#322C39' width='24px' height='24px' />
-                <p className='text-[11px] font-[400] leading-[13px] text-primary'>Bosh Sahifa</p>
-            </div>
-
-            <div className='flex items-center justify-center flex-col gap-[2px]'>
-                <Icons.manager fill='#322C39' width='24px' height='24px' />
-                <p className='text-[11px] font-[400] leading-[13px] text-primary'>SMM Menegar</p>
-            </div>
-
-            <div className='flex items-center justify-center flex-col gap-[2px]'>
-                <Icons.user fill='#7000FF' width='24px' height='24px' />
-                <p className='text-[11px] font-[400] leading-[13px] text-purple'>Profilim</p>
-            </div>
-        </div>
+        <BottomNavigation active={'profile'} />
 
     </section>
   )
