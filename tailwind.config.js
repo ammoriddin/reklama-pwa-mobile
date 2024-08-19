@@ -20,6 +20,7 @@ module.exports = {
       purple: '#7000ff',
       lightPuprle: '#F8F2FF',
       lightGray: "#f5f5f5",
+      borderColor: '#eee',
     }
   },
   plugins: [],

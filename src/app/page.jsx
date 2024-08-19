@@ -2,10 +2,12 @@ import SplashScreen from "@/components/splash-screen";
 
 export default function Home() {
   return (
-    <div>
+    <div className="relative z-[99]">
       <SplashScreen />
 
-      Home page
+      <p className="relative">
+        Home page
+      </p>
     </div>
   );
 }
