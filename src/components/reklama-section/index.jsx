@@ -142,7 +142,7 @@ export default function ReklamaSection() {
             </div>
 
             {/* progress */}
-            <div className="absolute bottom-[8.5%] z-[9999] left-[0] w-full h-[4px] bg-[white]/40">
+            <div className="absolute bottom-0 z-[9999] left-[0] w-full h-[3px] bg-[white]/40">
               <div
                 className="h-full bg-[white] transition-all"
                 style={{ width: `${progress[index]}%` }}
