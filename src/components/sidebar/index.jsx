@@ -11,8 +11,11 @@ const Sidebar = () => {
     return (
         <>
             {/* Overlay */}
-            <div onClick={() => setNavbar(false)} className={`${navbar ? "w-[100vw] h-[100vh] scale-[1]" : "w-0 h-0 scale-0"} transition-all duration-700 absolute top-0 left-0 bg-[white]/20 backdrop-blur-sm z-[999]`}>
-            </div>
+            {
+                navbar &&
+                <div onClick={() => setNavbar(false)} className={`w-[100vw] h-[100vh] transition-all duration-700 absolute top-0 left-0 bg-[white]/20 backdrop-blur-sm z-[999]`}>
+                </div>
+            }
 
             {/* Sidebar */}
             <ul className={`absolute flex flex-col navbar-shadow min-w-[336px] overflow-auto pb-[32px] z-[999999] transition-all ${navbar ? "translate-x-[0%]" : "translate-x-[-110%]"} duration-500 bg-[white] top-[0] left-[0] h-[100vh]`}>
@@ -113,7 +116,7 @@ const Sidebar = () => {
             </ul>
 
             {/* Burger & Close */}
-            <div onClick={() => setNavbar(!navbar)} className={`absolute h-[20px] top-[20px] cursor-pointer w-[20px] z-[999999999] left-[20px] ${!navbar ? "" : "flex flex-col gap-[3px]"}`}>
+            <div onClick={() => setNavbar(!navbar)} className={`absolute h-[20px] cursor-pointer w-[20px] z-[999999999] left-[20px] ${!navbar ? "top-[20px]" : "flex flex-col gap-[3px] top-[10px]"}`}>
                 <span onClick={() => setNavbar(!navbar)} className={`h-[2px] w-full absolute bg-[white] rounded-[5px] transition-all duration-500 ease-in-out ${navbar ? "bottom-[0px] rotate-[45deg]" : ""}`}></span>
                 <span onClick={() => setNavbar(!navbar)} className={`h-[2px] w-full absolute bg-[white] rounded-[5px] transition-all duration-500 ease-in-out ${navbar ? "bottom-[0px] opacity-0" : "bottom-[12px]"}`}></span>
                 <span onClick={() => setNavbar(!navbar)} className={`h-[2px] w-full absolute bottom-[-12px] bg-[white] rounded-[5px] transition-all duration-500 ease-in-out ${navbar ? "bottom-[0.01pc] rotate-[-45deg]" : "bottom-[6px]"}`}></span>
