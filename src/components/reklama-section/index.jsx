@@ -102,7 +102,7 @@ export default function ReklamaSection() {
         (src, index) => (
           <div key={index} className="w-full flex items-center bg-[black] relative h-[100vh] snap-start">
             
-            <div className="absolute flex flex-col gap-[17px] top-[50%] translate-y-[-50%] right-[16px]">
+            <div className="absolute z-[99] flex flex-col gap-[17px] top-[50%] translate-y-[-50%] right-[16px]">
               <div className="flex flex-col gap-[4px] items-center">
                 <Icons.heart width='30px' height='30px' fill='#fff' />
                 <p className="font-[500] text-[14px] leading-[17px] text-[white]/60">139</p>
@@ -125,7 +125,7 @@ export default function ReklamaSection() {
             </div>
 
             {/* data */}
-            <div className="px-[16px] absolute bottom-[140px]">
+            <div className="px-[16px] z-[99] absolute bottom-[140px]">
               <div className="flex gap-[4px] items-center mb-[5px]">
                 <p className="text-[13px] font-[500] leading-[15.5px] text-[white]">Развернуть</p>
                 <Icons.arrow fill='#fff' width='16px' height='16px' className='rotate-[-90deg]' />
@@ -135,14 +135,14 @@ export default function ReklamaSection() {
             </div>
 
             {/* Order */}
-            <div className="w-full absolute bottom-[100px] flex justify-center gap-[22px]">
+            <div className="w-full z-[99] absolute bottom-[100px] flex justify-center gap-[22px]">
               <a href="www.uzummarket.uz" target="_blank" className="text-[white] leading-[17px] font-[500] text-[14px]">www.uzummarket.uz</a>
               <span className="h-[16px] w-[1px] bg-[white]"></span>
               <a href="www.uzummarket.uz" target="_blank" className="text-[white] leading-[17px] font-[500] text-[14px]">Buyurtma berish</a>
             </div>
 
             {/* progress */}
-            <div className="absolute bottom-0 z-[9999] left-[0] w-full h-[3px] bg-[white]/40">
+            <div className="absolute bottom-[64px] z-[9999] left-[0] w-full h-[2px] bg-[white]/40">
               <div
                 className="h-full bg-[white] transition-all"
                 style={{ width: `${progress[index]}%` }}
@@ -152,7 +152,7 @@ export default function ReklamaSection() {
             <video
               ref={(el) => (videoRefs.current[index] = el)}
               src={src}
-              className="w-full h-[auto] object-cover"
+              className="w-full absolute bottom-[64px] h-[94%] object-cover"
               preload="none"
               loop
               onClick={() => handleVideoClick(index)}
