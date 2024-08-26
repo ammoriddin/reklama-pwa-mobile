@@ -165,7 +165,7 @@ export const Icons = {
             <g 
                 mask="url(#mask0_77_3594)">
                 <path d="M10 10L18 18M18 10L10 18" 
-                    stroke="#322C39"
+                    stroke="inherit"
                 />
             </g>
         </svg>
@@ -506,6 +506,128 @@ export const Icons = {
                 fill="inherit" 
                 stroke="white" 
                 stroke-width="0.4"
+            />
+        </svg>
+    ),
+    burger: (props) => (
+        <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <path 
+                d="M3 18H21V16H3V18ZM3 13H21V11H3V13ZM3 6V8H21V6H3Z" 
+                fill="white"
+            />
+        </svg>
+    ),
+    inbox: (props) => (
+        <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none"
+            {...props}
+        >
+            <g 
+                clip-path="url(#clip0_38_1005)"
+            >
+                <path 
+                    fill-rule="evenodd" 
+                    clip-rule="evenodd" 
+                    d="M3.00977 5.83789C3.00977 5.28561 3.45748 4.83789 4.00977 4.83789H20C20.5523 4.83789 21 5.28561 21 5.83789V17.1621C21 18.2667 20.1046 19.1621 19 19.1621H5C3.89543 19.1621 3 18.2667 3 17.1621V6.16211C3 6.11449 3.00333 6.06765 3.00977 6.0218V5.83789ZM5 8.06165V17.1621H19V8.06199L14.1215 12.9405C12.9499 14.1121 11.0504 14.1121 9.87885 12.9405L5 8.06165ZM6.57232 6.80554H17.428L12.7073 11.5263C12.3168 11.9168 11.6836 11.9168 11.2931 11.5263L6.57232 6.80554Z" 
+                    fill="inherit"
+                />
+                <g 
+                    filter="url(#filter0_d_38_1005)"
+                >
+                {
+                    props.circle && 
+                    <circle 
+                        cx="20" 
+                        cy="5" 
+                        r="2" 
+                        fill="#FF0000"
+                    />
+                }
+                </g>
+            </g>
+            <defs>
+                <filter id="filter0_d_38_1005" x="10" y="0" width="16" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset dx="-2" dy="3"/>
+                    <feGaussianBlur stdDeviation="3"/>
+                    <feComposite in2="hardAlpha" operator="out"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 0 0 0 0 0 0.360784 0 0 0 0.45 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_38_1005"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_38_1005" result="shape"/>
+                </filter>
+                <clipPath id="clip0_38_1005">
+                    <rect width="24" height="24" fill="white"/>
+                </clipPath>
+            </defs>
+        </svg>
+    ),
+    hash: (props) => (
+        <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            {...props}
+        >
+            <path 
+                d="M4 15H20" 
+                stroke="#322C39" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+            />
+            <path 
+                d="M4 9H20" 
+                stroke="#322C39" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+            />
+            <path 
+                d="M16 3L14 21" 
+                stroke="#322C39" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+            />
+            <path 
+                d="M10 3L8 21" 
+                stroke="#322C39" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+            />
+        </svg>
+    ),
+    logout: (props) => (
+        <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="16" 
+            height="16" 
+            viewBox="0 0 16 16" 
+            fill="none"
+            {...props}
+        >
+            <path 
+                d="M5.67627 13.3333H3.0096C2.27322 13.3333 1.67627 12.7363 1.67627 12V3.99996C1.67627 3.26358 2.27322 2.66663 3.0096 2.66663H5.67627V3.99996H3.0096V12H5.67627V13.3333Z" 
+                fill={`${props.fill ? props.fill : '#FF0000'}`}
+            />
+            <path 
+                d="M9.22795 11.59L10.1747 10.6512L7.56196 8.01611L13.6572 8.01608C14.0254 8.01607 14.3239 7.7176 14.3239 7.34941C14.3239 6.98122 14.0254 6.68274 13.6572 6.68274L7.54912 6.68277L10.2028 4.05156L9.26396 3.10476L5.00335 7.32936L9.22795 11.59Z" 
+                fill={`${props.fill ? props.fill : '#FF0000'}`}
             />
         </svg>
     ),

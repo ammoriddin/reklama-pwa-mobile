@@ -104,22 +104,22 @@ export default function ReklamaSection() {
             
             <div className="absolute flex flex-col gap-[17px] top-[50%] translate-y-[-50%] right-[16px]">
               <div className="flex flex-col gap-[4px] items-center">
-                <Icons.heart fill='#fff' />
+                <Icons.heart width='30px' height='30px' fill='#fff' />
                 <p className="font-[500] text-[14px] leading-[17px] text-[white]/60">139</p>
               </div>
 
               <div className="flex flex-col gap-[4px] items-center">
-                <Icons.coment fill='#fff' />
+                <Icons.coment width='30px' height='30px' fill='#fff' />
                 <p className="font-[500] text-[14px] leading-[17px] text-[white]/60">39</p>
               </div>
 
               <div className="flex flex-col gap-[4px] items-center">
-                <Icons.share fill='#fff' />
+                <Icons.share width='30px' height='30px' fill='#fff' />
                 <p className="font-[500] text-[14px] leading-[17px] text-[white]/60">47</p>
               </div>
 
               <div className="flex flex-col gap-[4px] items-center">
-                <Icons.save fill='#fff' />
+                <Icons.save width='30px' height='30px' fill='#fff' />
                 <p className="font-[500] text-[14px] leading-[17px] text-[white]/60">7</p>
               </div>
             </div>
