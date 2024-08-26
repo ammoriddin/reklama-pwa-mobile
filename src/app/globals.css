@@ -8,6 +8,10 @@ body,html {
     overflow-x: hidden;
 }
 
+* {
+    scroll-behavior: smooth;
+}
+
 .css-13cymwt-control {
     border-right: none !important;
     border-left: none !important;
@@ -41,4 +45,11 @@ input[type="number"] {
 
 .navbar-shadow {
     filter: drop-shadow(7px 0px 24px rgba(0, 0, 0, 0.9));
+}
+
+.sidebar-bg {
+    background-image: url('../../public/backgrounds/sidebar-bg.jpg');
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
 }
